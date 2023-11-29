@@ -1,6 +1,6 @@
 import NewTask from './NewTask.jsx';
 
-export default function Tasks({ selectedProjectTasks, onAddTask, onDeleteTask }) {
+export default function Tasks({ selectedProjectTasks, onAddTask, onDeleteTaskButtonClick }) {
     return (
         <section>
         <h2 className="text-2xl font-bold text-stone-700 mb-4">Tasks</h2>
@@ -17,7 +17,7 @@ export default function Tasks({ selectedProjectTasks, onAddTask, onDeleteTask })
                     <span>{task.text}</span>
                     <button
                         className="text-stone-700 hover:text-red-500"
-                        onClick={() => onDeleteTask(task.id)}
+                        onClick={() => onDeleteTaskButtonClick(task.id)}
                     >
                         Delete
                     </button>

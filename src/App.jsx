@@ -27,7 +27,7 @@ function App() {
     });
   }
 
-  function handleDeleteTask(id) {
+  function handleDeleteTaskButtonClick(id) {
     setProjectsState(prevState => {
       return {
         ...prevState,
@@ -38,7 +38,7 @@ function App() {
     });
   }
 
-  function handleSelectProject(id) {
+  function handleSelectProjectButtonClick(id) {
     setProjectsState(prevState => {
       return {
         ...prevState,
@@ -71,7 +71,7 @@ function App() {
     });
   }
 
-  function handleCancelClick() {
+  function handleCancelButtonClick() {
     setProjectsState(prevState => {
       return {
         ...prevState,
@@ -80,7 +80,7 @@ function App() {
     });
   }
 
-  function handleDeleteProject() {
+  function handleDeleteProjectButtonClick() {
     setProjectsState(prevState => {
       return {
         ...prevState,
@@ -102,16 +102,16 @@ function App() {
     <SelectedProject
       project={selectedProject}
       selectedProjectTasks={selectedProjectTasks}
-      onDeleteProject={handleDeleteProject}
+      onDeleteProjectButtonClick={handleDeleteProjectButtonClick}
       onAddTask={handleAddTask}
-      onDeleteTask={handleDeleteTask}
+      onDeleteTaskButtonClick={handleDeleteTaskButtonClick}
     />
   );
 
   if(projectsState.selectedProjectId === undefined) {
     content = <NoProjectSelected onAddProjectButtonClick={handleAddProjectButtonClick} />;
   } else if(projectsState.selectedProjectId === null) {
-    content = <NewProject onAddProject={handleAddProject} onCancelClick={handleCancelClick} />;
+    content = <NewProject onAddProject={handleAddProject} onCancelButtonClick={handleCancelButtonClick} />;
   }
 
   return (
@@ -120,7 +120,7 @@ function App() {
         onAddProjectButtonClick={handleAddProjectButtonClick}
         projects={projectsState.projects}
         selectedProjectId={projectsState.selectedProjectId}
-        onSelectProject={handleSelectProject}
+        onSelectProjectButtonClick={handleSelectProjectButtonClick}
       />
       {content}
     </main>
