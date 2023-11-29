@@ -96,6 +96,7 @@ function App() {
   let content = (
     <SelectedProject
       project={selectedProject}
+      selectedProjectId={projectsState.selectedProjectId}
       onDeleteProject={handleDeleteProject}
       onAddTask={handleAddTask}
       onDeleteTask={handleDeleteTask}
