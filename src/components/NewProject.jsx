@@ -29,7 +29,7 @@ export default function NewProject({ onAddProject, onCancelClick }) {
     return (
         <>
             <Modal ref={modal} buttonText="Close">
-                <p>Please provide a valid value for every input field.</p>
+                <p className="text-stone-600 mb-4">Please provide a valid value for every input field.</p>
             </Modal>
             <div className="w-[35rem] mt-16">
                 <menu className="flex items-center justify-end gap-4 my-4">
